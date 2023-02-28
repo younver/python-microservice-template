@@ -1,4 +1,4 @@
-python-dotenv
+environs
 fastapi
 pydantic
 uvicorn
