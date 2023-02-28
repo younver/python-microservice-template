@@ -3,7 +3,7 @@ install:
 		python3 -m pip install -r requirements.txt
 
 test:
-	python3 -m pytest app/tests/unit_tests.py
+	python3 -m pytest tests/unit_tests.py
 
 build:
 	docker build -t microservice-template .
