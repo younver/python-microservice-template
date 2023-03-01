@@ -11,7 +11,7 @@ async def controller(request: ControllerRequest) -> ControllerResponse:
     
     try:
         field = request.controller_field
-        field += settings.SERVICE_KEY
+        field += settings.EXAMPLE_VARIABLE
     except Exception as ex:
         raise HTTPException(status_code=400, detail=str(ex))
 
