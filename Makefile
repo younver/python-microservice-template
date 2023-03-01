@@ -7,11 +7,11 @@ unit-test:
 
 test: unit-test
 
+run:
+	uvicorn app.main:app --host 0.0.0.0 --port 8000
+
 build:
 	docker build -t microservice-template .
-
-run:
-	docker run -p 8000:8000 microservice-template
 
 deploy:
 	docker-compose up -d
