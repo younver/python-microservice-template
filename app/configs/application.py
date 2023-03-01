@@ -1,13 +1,10 @@
 from pydantic import BaseSettings
 from environs import Env
 
-
 env = Env()
 env.read_env()
 
+class Settings(BaseSettings):
+    EXAMPLE_VARIABLE: str = env.str("EXAMPLE_VARIABLE")
 
-class Application(BaseSettings):
-    SERVICE_KEY: str = env.str("SERVICE_KEY")
-
-
-settings = Application()
+settings = Settings()
