@@ -34,7 +34,7 @@ class TestControllerController:
             })
 
         assert response.status_code == 200
-        assert response.json() == {"controller_field": "something"+settings.SERVICE_KEY}
+        assert response.json() == {"controller_field": "something"+settings.EXAMPLE_VARIABLE}
 
     def test_should_return_not_found_when_invalid_uri(self):
 
