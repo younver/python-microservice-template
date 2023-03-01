@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  service-1:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      EXAMPLE_VARIABLE: fueledWithRamen
+  service-2:
+    build: .
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8001
+    volumes:
+      - .:/app
+    ports:
+      - "8001:8001"
+    environment:
+      EXAMPLE_VARIABLE: timeForUsToTakeOurChance
