@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Continious Integration
 
 on: 
   push:
@@ -9,7 +9,7 @@ on:
       - "main"
 
 jobs:
-  install:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,24 +19,10 @@ jobs:
         run: |
           make install
       
-  unit-test:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      
-      - name: Run Unit Tests
+      - name: Test
         run: |
           make test
-  
-  build:
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-  
+      
       - name: Build Container
         run: |
           make build
