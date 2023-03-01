@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Continious Integration
 
 on: 
   push:
@@ -18,8 +18,8 @@ jobs:
       - name: Install Dependencies
         run: |
           make install
-
-      - name: Run Unit Tests
+          
+      - name: Test
         run: |
           make test
       
